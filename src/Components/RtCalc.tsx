@@ -178,7 +178,7 @@ export default function RtCalc() {
       }
     });
 
-    let exposition = ((focus / 25.4) ** 2 * 1.5 * density) / curi;
+    let exposition = ((focus / 25.4) ** 2 * 2 * density) / curi;
 
     function transformToMinute(value: number) {
       let wholeNum = Math.trunc(value);
