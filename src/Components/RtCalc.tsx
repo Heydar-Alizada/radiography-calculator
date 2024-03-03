@@ -173,11 +173,12 @@ export default function RtCalc() {
       if (elem[0] >= (thick + cap) * mult) {
         transformThick = elem[0];
         density = elem[1];
+        console.log(density);
         return true;
       }
     });
 
-    let exposition = ((focus / 25.4) ** 2 * 4.5 * density) / curi;
+    let exposition = ((focus / 25.4) ** 2 * 1.5 * density) / curi;
 
     function transformToMinute(value: number) {
       let wholeNum = Math.trunc(value);
@@ -242,13 +243,14 @@ export default function RtCalc() {
           <i className="capCheckbox">add CAP (mm) </i>
         </label>
         <input
-          type="number"
           id="cap"
           name="cap"
+          type="number"
           min="0"
           max="20"
+          placeholder="1.5"
           step={0.1}
-          value={cap}
+          // value={cap}
           onChange={(event) => dispatch(setCap(Number(event.target.value)))}
         />
 
@@ -305,7 +307,7 @@ export default function RtCalc() {
           </b>
           <p className="diaWorning">
             {!checkDiaMM
-              ? '  **diameter does not comply with pipeline standards, so conversion from mm to inches is explicit'
+              ? '  **diameter does not comply with pipeline standards, so conversion from inches to mm is explicit'
               : ''}
           </p>
         </div>

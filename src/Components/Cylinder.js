@@ -61,7 +61,7 @@ export default function Cylinder() {
 
   return (
     <>
-     <PerspectiveCamera makeDefault position={[dia+8, 9, 10]} />
+     <PerspectiveCamera makeDefault position={[dia+5, 9, 10]} />
     <mesh ref={ref} onDoubleClick={(e) => setIsWireframe(!isWireframe)} ondo
           onPointerDown={(e)=>{
             e.stopPropagation()
